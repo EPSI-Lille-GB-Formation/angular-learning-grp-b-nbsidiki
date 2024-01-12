@@ -1,6 +1,6 @@
 import { Todo } from './todo';
 
-export const TODOS: Todo[] = [
+export let TODOS: Todo[] = [
   {
     id: 1,
     title: 'Peindre le mur',

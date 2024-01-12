@@ -1,17 +1,22 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { TodoListComponent } from './todo-list/todo-list.component';
 import { RouterOutlet } from '@angular/router';
-import { todoComponent } from './todo-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [TodoListComponent, RouterOutlet, TodoListComponent],
   template: `
     <div class="container">
-      <todo-list />
+      <router-outlet></router-outlet>
     </div>
   `,
-  styles: [''],
-  imports: [CommonModule, RouterOutlet, AppComponent, todoComponent],
+  styles: [
+    `
+      :root {
+        --primary: #f4511e;
+      }
+    `,
+  ],
 })
 export class AppComponent {}
